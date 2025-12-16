@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- 应用程序 Logo -->
     <TextView
         android:id="@+id/app_title"
         android:layout_width="match_parent"
@@ -15,8 +14,6 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <!-- Google Places Autocomplete 搜索栏 (Figure 3) -->
-    <!-- 注意：fragment 必须使用完整的类名 -->
     <fragment
         android:id="@+id/autocomplete_fragment"
         android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
@@ -24,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/app_title" />
 
-    <!-- 地图容器 (Figure 2 & 4) -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"

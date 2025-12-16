@@ -9,6 +9,7 @@ android {
     }
 
     defaultConfig {
+        manifestPlaceholders["MAPS_API_KEY"] = "AIzaSyBSreMV6eAt8necsd6QPQbKpwyCSf1u6wM"
         applicationId = "com.example.assignmentthree"
         minSdk = 24
         targetSdk = 36
@@ -34,6 +35,12 @@ android {
 }
 
 dependencies {
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.libraries.places:places:3.2.0")
+    implementation("com.google.maps.android:android-maps-utils:3.4.0")
     implementation(libs.google.play.services.maps)
     implementation(libs.google.play.services.places)
     implementation(libs.android.volley)

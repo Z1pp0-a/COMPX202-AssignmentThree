@@ -1,58 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
+        <!-- Park Name -->
         <TextView
-            android:id="@+id/tv_park_name"
-            android:layout_width="wrap_content"
+            android:id="@+id/parkName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="28sp"
+            android:text="Park Name"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:text="Loading Park Name..."
-            android:layout_marginBottom="10dp" />
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
 
         <!-- Street View Image -->
         <ImageView
-            android:id="@+id/iv_street_view"
+            android:id="@+id/streetViewImage"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:background="#DDDDDD"
-            android:contentDescription="Street View Image"
+            android:background="@android:color/darker_gray"
             android:layout_marginBottom="16dp" />
 
         <!-- Address -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Address:" />
-        <TextView android:id="@+id/tv_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
-
-        <!-- Rating -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Rating:" android:layout_marginTop="8dp" />
-        <RatingBar
-            android:id="@+id/rating_bar"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="?android:attr/ratingBarStyleSmall"
-            android:numStars="5"
-            android:stepSize="0.5" />
-
-        <!-- Weather -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Current Weather:" android:layout_marginTop="8dp" />
-        <TextView android:id="@+id/tv_weather" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+            android:text="Loading address..."
+            android:layout_marginBottom="16dp" />
 
         <!-- Hours -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Opening Hours:" android:layout_marginTop="8dp" />
-        <TextView android:id="@+id/tv_hours" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+        <TextView
+            android:id="@+id/hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading hours..."
+            android:layout_marginBottom="16dp" />
 
-        <!-- Reviews -->
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Recent Reviews (Max 5):" android:layout_marginTop="16dp" />
-        <TextView android:id="@+id/tv_reviews" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Loading reviews..." />
+        <!-- Weather -->
+        <TextView
+            android:id="@+id/weatherInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loading weather..."
+            android:layout_marginBottom="16dp" />
+
+        <!-- Rating -->
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="0"
+            android:layout_marginBottom="16dp"
+            android:isIndicator="true" />
 
     </LinearLayout>
 </ScrollView>

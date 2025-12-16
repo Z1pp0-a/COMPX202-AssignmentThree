@@ -2,29 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    android:padding="32dp">
+    android:gravity="center">
 
-    <!-- 假设你有一个名为 ic_logo 的 drawable 资源 -->
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:id="@+id/iv_logo"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
         android:src="@drawable/img_logo_main_park_locator" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ParkInfo"
-        android:textSize="36sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="50dp" />
 
     <Button
         android:id="@+id/btn_start"
-        android:layout_width="wrap_content"
+        android:layout_width="256dp"
         android:layout_height="wrap_content"
-        android:text="Start"
-        android:paddingStart="40dp"
-        android:paddingEnd="40dp" />
+        android:layout_marginTop="40dp"
+        android:text="@string/btn_name"
+        android:textSize="36sp" />
 </LinearLayout>
