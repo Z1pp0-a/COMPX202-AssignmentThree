@@ -34,6 +34,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.google.play.services.maps)
+    implementation(libs.google.play.services.places)
+    implementation(libs.android.volley)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
