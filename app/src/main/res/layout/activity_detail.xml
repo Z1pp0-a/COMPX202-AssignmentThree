@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_park_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:text="Loading Park Name..."
+            android:layout_marginBottom="10dp" />
+
+        <!-- Street View Image -->
+        <ImageView
+            android:id="@+id/iv_street_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#DDDDDD"
+            android:contentDescription="Street View Image"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Address -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Address:" />
+        <TextView android:id="@+id/tv_address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+
+        <!-- Rating -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Rating:" android:layout_marginTop="8dp" />
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/ratingBarStyleSmall"
+            android:numStars="5"
+            android:stepSize="0.5" />
+
+        <!-- Weather -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Current Weather:" android:layout_marginTop="8dp" />
+        <TextView android:id="@+id/tv_weather" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+
+        <!-- Hours -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Opening Hours:" android:layout_marginTop="8dp" />
+        <TextView android:id="@+id/tv_hours" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+
+        <!-- Reviews -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:textStyle="bold" android:text="Recent Reviews (Max 5):" android:layout_marginTop="16dp" />
+        <TextView android:id="@+id/tv_reviews" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Loading reviews..." />
+
+    </LinearLayout>
+</ScrollView>
