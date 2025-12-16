@@ -19,7 +19,7 @@
         android:theme="@style/Theme.AssignmentThree">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBSreMV6eAt8necsd6QPQbKpwyCSf1u6wM" />
+            android:value="${MAPS_API_KEY}" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
