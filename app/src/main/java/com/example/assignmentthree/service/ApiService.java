@@ -56,12 +56,58 @@ public class ApiService {
         VolleySingleton.getInstance(context).addToRequestQueue(request);
     }
 
-    // --- DETAIL ACTIVITY METHODS (Details, Weather) ---
-    // (我们将在步骤 10 中补充这些方法)
+    // ... (代码承接自步骤 8.2)
+
+    // --- DETAIL ACTIVITY METHODS ---
+
+    /**
+     * 获取 Places Details (名称, 地址, 评分, 营业时间, 评论)
+     */
     public void getPlaceDetails(String placeId, ApiCallback<JSONObject> callback) {
-        // 留空，将在步骤 10 补充
+        // 请求 fields 必须在 URL 中明确指定
+        String url = String.format(
+                "https://maps.googleapis.com/maps/api/place/details/json?place_id=%s&fields=name,formatted_address,rating,opening_hours,review&key=%s",
+                placeId, GOOGLE_API_KEY
+        );
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    try {
+                        // 成功后，将整个 JSON 响应对象返回给 Activity 处理
+                        callback.onSuccess(response.getJSONObject("result"));
+                    } catch (Exception e) {
+                        callback.onError("Details Parse Error: " + e.getMessage());
+                    }
+                },
+                error -> callback.onError("Details API Error: " + (error.getMessage() != null ? error.getMessage() : "Unknown Error"))
+        );
+        VolleySingleton.getInstance(context).addToRequestQueue(request);
     }
+
+    /**
+     * 获取当前天气数据
+     */
     public void getCurrentWeather(LatLng location, ApiCallback<String> callback) {
-        // 留空，将在步骤 10 补充
+        // 使用 Weather API
+        String url = String.format(
+                "http://api.weatherapi.com/v1/current.json?key=%s&q=%f,%f",
+                WEATHER_API_KEY, location.latitude, location.longitude
+        );
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                response -> {
+                    try {
+                        JSONObject current = response.getJSONObject("current");
+                        double tempC = current.getDouble("temp_c");
+                        String condition = current.getJSONObject("condition").getString("text");
+                        callback.onSuccess(String.format("%.1f°C, %s", tempC, condition));
+                    } catch (Exception e) {
+                        callback.onError("Weather Parsing Error: " + e.getMessage());
+                    }
+                },
+                error -> callback.onError("Weather API Error: Failed to fetch data.")
+        );
+        VolleySingleton.getInstance(context).addToRequestQueue(request);
     }
 }
+
