@@ -9,6 +9,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Logo Image -->
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/img_logo_main_park_locator"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp" />
+
         <!-- Park Name -->
         <TextView
             android:id="@+id/parkName"
@@ -18,9 +28,8 @@
             android:textSize="24sp"
             android:textStyle="bold"
             android:gravity="center"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="24dp" />
 
-        <!-- Street View Image -->
         <ImageView
             android:id="@+id/streetViewImage"
             android:layout_width="match_parent"
@@ -29,31 +38,66 @@
             android:background="@android:color/darker_gray"
             android:layout_marginBottom="16dp" />
 
-        <!-- Address -->
+        <!-- ================= Address Section ================= -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
         <TextView
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Loading address..."
+            android:textSize="16sp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Hours -->
+        <!-- ================= Hours Section ================= -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hours:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
         <TextView
             android:id="@+id/hours"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Loading hours..."
+            android:textSize="16sp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Weather -->
+        <!-- ================= Current Weather Section ================= -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Weather:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
         <TextView
             android:id="@+id/weatherInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Loading weather..."
+            android:textSize="16sp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Rating -->
+        <!-- ================= Rating Section ================= -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rating &amp; Reviews:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
@@ -61,8 +105,11 @@
             android:numStars="5"
             android:stepSize="0.5"
             android:rating="0"
-            android:layout_marginBottom="16dp"
-            android:isIndicator="true" />
+            style="?android:attr/ratingBarStyleSmall"
+            android:isIndicator="true"
+            android:layout_marginBottom="16dp" />
+
+
 
     </LinearLayout>
 </ScrollView>

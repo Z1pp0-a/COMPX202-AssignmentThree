@@ -3,23 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/app_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ParkInfo"
-        android:gravity="center"
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_logo_main_park_locator"
+        android:scaleType="fitCenter"
         android:padding="8dp"
         android:background="#E0F7FA"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/app_name" />
 
     <fragment
         android:id="@+id/autocomplete_fragment"
         android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/app_title" />
+        android:layout_below="@id/iv_logo" />
 
     <fragment
         android:id="@+id/map"
